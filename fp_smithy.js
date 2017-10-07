@@ -13,15 +13,18 @@
 // @version 0.1
 // ==/UserScript==
 
-function removeElementsByClass(className){
-  var elements = document.getElementsByClassName(className);
-  while(elements.length > 0){
-    elements[0].parentNode.removeChild(elements[0]);
-  }
+// Max avatar size
+var forumavatars = document.getElementsByClassName( "avatar_image" );
+for ( var i = 0; i < forumavatars.length; ++i )
+{
+    forumavatars[i].style.maxWidth = "80px";
+    forumavatars[i].style.maxHeight = "160px";
 }
 
+// Remove titles
 var forumtitles = document.getElementsByClassName( "usertitle" );
 for ( var i = 0; i < forumtitles.length; ++i )
 {
-  removeElementsByClass( forumtitles[i] );
+    forumtitles[i].parentNode.removeChild( forumtitles[i] );
+    forumtitles[i].remove();
 }
