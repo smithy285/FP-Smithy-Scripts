@@ -13,9 +13,15 @@
 // @version 0.1
 // ==/UserScript==
 
+function removeElementsByClass(className){
+  var elements = document.getElementsByClassName(className);
+  while(elements.length > 0){
+    elements[0].parentNode.removeChild(elements[0]);
+  }
+}
+
 var forumtitles = document.getElementsByTagName( "usertitle" );
 for ( var i = 0; i < forumtitles.length; ++i )
 {
-  forumtitles[i].outerHTML = "";
-  delete forumtitles[i];
+  removeElementsByClass( forumtitles[i] );
 }
