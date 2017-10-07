@@ -20,7 +20,7 @@ function removeElementsByClass(className){
   }
 }
 
-var forumtitles = document.getElementsByTagName( "usertitle" );
+var forumtitles = document.getElementsByClassName( "usertitle" );
 for ( var i = 0; i < forumtitles.length; ++i )
 {
   removeElementsByClass( forumtitles[i] );
